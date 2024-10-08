@@ -7,7 +7,6 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
-
 class ProductController extends Controller
 {
     /**
@@ -15,7 +14,7 @@ class ProductController extends Controller
      */
     public function index() : View
     {
-        return view('index', [
+        return view('product/index', [
             'products' => Product::latest()->paginate(3)
         ]);
     }
